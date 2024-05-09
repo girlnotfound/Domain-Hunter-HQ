@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
   <link rel="stylesheet" type="text/CSS" href="./assets/css/styles.css">
   <script src="./assets/js/script.js" defer></script>
   <title>Domain Hunter HQ</title>
@@ -22,6 +23,23 @@
   </div>
   <div id="result-section">
     <p id="displayed-results">Results show here</p>
+    <div class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Domain Name</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+        </section>
+        <footer class="modal-card-foot">
+          <div class="buttons">
+            <button class="button">Close</button>
+          </div>
+        </footer>
+      </div>
+    </div>
   </div>
 </main>
 </body>
