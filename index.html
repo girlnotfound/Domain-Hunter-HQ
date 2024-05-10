@@ -3,28 +3,23 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- added bulma stylesheet link-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
         <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-        <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-        <title>Server-Side APIs</title>
+        <title>Domain Hunter HQ</title>
     </head>
 
     <body class="min-100-vh flex-column bg-light">
         <header class="p-5 text-center text-white bg-primary">
-            <h1>Server-Side APIs</h1>
+            <h1>Domain Hunter HQ</h1>
         </header>
         <main class="flex-row justify-center align-center col-auto p-4">
             <div class="col-7">
                 <section class="card card-rounded bg-white">
                     <header class="card-header text-center">
-                        <h2 class="text-white">Create a fetch request</h2>
+                        <h2 class="text-white">Search For A Domain Name</h2>
                     </header>
-                    <div
-                        class="card-body flex-row justify-center p-4 text-center"
-                    >
-                        <p class="col-10 mb-3">
-                            In the script.js file, create the correct URL for
-                            the fetch request to list YOUR repositories.
-                        </p>
+                    <div class="card-body flex-row justify-center p-4 text-center"></div>
                         <div class="col-8 mb-3">
                             <form action="click">
                                 <input
@@ -35,14 +30,31 @@
                             </form>
 
                             <button class="btn btn-primary" id="search-btn">
-                                Fetch Your User Repos
+                                Search
                             </button>
                         </div>
                         <ul class="col-8 mb-3"></ul>
+                        <!-- added bulma launch card modal -->
+                        <div class="modal">
+                            <div class="modal-background"></div>
+                            <div class="modal-card">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title">Modal title</p>
+                                    <button class="delete" aria-label="close"></button>
+                                </header>
+                                <section class="modal-card-body">
+                                    <!-- Content ... -->
+                                </section>
+                                <footer class="modal-card-foot">
+                                    <div class="buttons">
+                                        <button class="button is-success">Save changes</button>
+                                        <button class="button">Cancel</button>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
                     </div>
-                    <footer class="card-footer text-center">
-                        ^ You should see a list of your repositories ^
-                    </footer>
+                    <footer>&copy; 2024 Domain Hunter HQ</footer>
                 </section>
             </div>
         </main>
