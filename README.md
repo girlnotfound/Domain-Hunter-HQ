@@ -37,4 +37,7 @@ THEN I am presented with how old the domain is and its registered owner's contac
 1. Search domain name for availability.
 2. If domain name has been taken, present its current owner's contact info.
 
+## Link to the Deployed Web App
+[https://girlnotfound.github.io/Domain-Hunter-HQ/index.html](https://girlnotfound.github.io/Domain-Hunter-HQ/index.html)
+
 &copy; 2024 - Domain Hunter HQ.
