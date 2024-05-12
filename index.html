@@ -4,7 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- added bulma stylesheet link-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+        />
         <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
         <title>Domain Hunter HQ</title>
     </head>
@@ -19,41 +22,48 @@
                     <header class="card-header text-center">
                         <h2 class="text-white">Search For A Domain Name</h2>
                     </header>
-                    <div class="card-body flex-row justify-center p-4 text-center"></div>
-                        <div class="col-8 mb-3">
-                            <form action="click">
-                                <input
-                                    type="text"
-                                    placeholder="Enter Domain Name"
-                                    id="domainNameInput"
-                                />
-                            </form>
+                    <div
+                        class="card-body flex-row justify-center p-4 text-center"
+                    ></div>
+                    <div class="col-8 mb-3">
+                        <form action="click">
+                            <input
+                                type="text"
+                                placeholder="Enter Domain Name"
+                                id="domainNameInput"
+                            />
+                        </form>
 
-                            <button class="btn btn-primary" id="search-btn">
-                                Search
-                            </button>
-                        </div>
-                        <ul class="col-8 mb-3"></ul>
-                        <!-- added bulma launch card modal -->
-                        <div class="modal">
-                            <div class="modal-background"></div>
-                            <div class="modal-card">
-                                <header class="modal-card-head">
-                                    <p class="modal-card-title">Modal title</p>
-                                    <button class="delete" aria-label="close"></button>
-                                </header>
-                                <section class="modal-card-body">
-                                    <!-- Content ... -->
-                                </section>
-                                <footer class="modal-card-foot">
-                                    <div class="buttons">
-                                        <button class="button is-success">Save changes</button>
-                                        <button class="button">Cancel</button>
-                                    </div>
-                                </footer>
-                            </div>
+                        <button class="btn btn-primary" id="search-btn">
+                            Search
+                        </button>
+                    </div>
+                    <ul class="col-8 mb-3"></ul>
+                    <!-- added bulma launch card modal -->
+                    <div class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-card">
+                            <header class="modal-card-head">
+                                <p class="modal-card-title">Modal title</p>
+                                <button
+                                    class="delete"
+                                    aria-label="close"
+                                ></button>
+                            </header>
+                            <section class="modal-card-body">
+                                <!-- Content ... -->
+                            </section>
+                            <footer class="modal-card-foot">
+                                <div class="buttons">
+                                    <button class="button is-success">
+                                        Save changes
+                                    </button>
+                                    <button class="button">Cancel</button>
+                                </div>
+                            </footer>
                         </div>
                     </div>
+
                     <footer>&copy; 2024 Domain Hunter HQ</footer>
                 </section>
             </div>
