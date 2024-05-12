@@ -1,4 +1,3 @@
-const repoList = document.querySelector('ul');
 const fetchButton = document.getElementById('search-btn');
 
 function getApi() {
