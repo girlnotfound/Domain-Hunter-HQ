@@ -9,41 +9,36 @@
         <title>Domain Hunter HQ</title>
     </head>
 
-    <body class="min-100-vh flex-column bg-light">
-        <header class="p-5 text-center text-white bg-primary">
+    <body>
+        <header>
             <h1>Domain Hunter HQ</h1>
         </header>
-        <main class="flex-row justify-center align-center col-auto p-4">
-            <div class="col-7">
-                <section class="card card-rounded bg-white">
-                    <header class="card-header text-center">
-                        <h2 class="text-white">Search For A Domain Name</h2>
-                    </header>
-                    <div class="card-body flex-row justify-center p-4 text-center"></div>
-                        <div class="col-8 mb-3">
-                            <form action="click">
-                                <input
-                                    type="text"
-                                    placeholder="Enter Domain Name"
-                                    id="domainNameInput"
-                                />
-                            </form>
-
-                            <button class="btn btn-primary" id="search-btn">
-                                Search
-                            </button>
+        <main>
+            <div>
+                <section>
+                    <div class="search-container">
+                        <h2>Search For A Domain Name</h2>
+                        <div>
+                            <div class="box">
+                                <form action="click" class="search-bar">
+	                                <input type="search" name="search" pattern=".*\S.*" required>
+	                                <button class="search-btn" type="submit">
+		                            <span>Search</span>
+	                                </button>
+                                </form>
+                            </div>
                         </div>
-                        <ul class="col-8 mb-3"></ul>
+                    </div>
                         <!-- added bulma launch card modal -->
                         <div class="modal">
                             <div class="modal-background"></div>
                             <div class="modal-card">
                                 <header class="modal-card-head">
-                                    <p class="modal-card-title">Modal title</p>
+                                    <p class="modal-card-title">Results:</p>
                                     <button class="delete" aria-label="close"></button>
                                 </header>
                                 <section class="modal-card-body">
-                                    <!-- Content ... -->
+                                    <!-- content ... -->
                                 </section>
                                 <footer class="modal-card-foot">
                                     <div class="buttons">
@@ -53,11 +48,12 @@
                                 </footer>
                             </div>
                         </div>
-                    </div>
-                    <footer>&copy; 2024 Domain Hunter HQ</footer>
                 </section>
             </div>
         </main>
+        <footer>&copy; 2024 Domain Hunter HQ</footer>
+
         <script src="./assets/js/script.js"></script>
+
     </body>
 </html>
