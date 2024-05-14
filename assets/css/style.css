@@ -8,50 +8,48 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* account for padding and border in the elements total width and height */
+}
+
+html, body {
+  height: 100%; /* to make the body fill the entire viewport */
+  overflow: hidden; /* hide overflow to remove the scroll bar */
 }
 
 body {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  height: 100vh; /* to make the body fill the entire viewport height */
   background: var(--jet-black);
-  cursor: pointer;
-  min-height: 100vh;  /* ensures footer can stick to bottom if content is not enough */
   font-family: 'Courier New', Courier, monospace;
+  cursor: pointer;
 }
 
-header {
-  width: 100%;
-  background-color: var(--charcoal);
+main {
+  flex-grow: 1; /* to allow the main content to expand and fill the space available */
+  overflow: auto; /* to add a scroll bar if content overflows */
+}
+
+header, main, footer {
   color: var(--pale-blue);
-  font-size: 40px;
-  position: fixed; 
-  top: 0;
 }
 
 header h1 {
   text-align: center;
-}
-
-main {
-  flex: 1;
-  overflow: auto;
-  padding-top: 60px;
+  font-size: 45px;
+  background-color: var(--charcoal);
+  border: 1px solid var(--dusty-blue);
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 30px;
   padding-bottom: 20px;
-  color: var(--pale-blue);
 }
 
 footer {
-  background-color: var(--jet-black);
-  color: var(--pale-blue);
-  padding: 20px;
-  width: 100%;
+  font-size: 20px;
   text-align: center;
-  margin-top: 0;
+  border: 1px solid var(--dusty-blue);
 }
 
 /* defines layout for search container */
@@ -60,7 +58,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 /* styling for the searchbar */
@@ -192,7 +190,7 @@ footer {
   transform: translateY(1px);
 }
 
-/* this specifically targets the animated search bar */
+/* targets the animated search bar */
 @media screen {
   body,
   input {
@@ -214,17 +212,17 @@ footer {
   }
 }
 
-/* added media queries to make the site responsive */
-@media screen and (max-width: 768px) {
+  /* added media queries to make the site responsive */
+  @media screen and (max-width: 768px) {
   header h1 {
     font-size: 24px; /* smaller title font size for smaller screen */
-  }
+ }
 
   .search-container h2 {
     font-size: 20px; /* smaller section font size for smaller screen */
   }
 }
 
-footer {
+  footer {
   padding: 20px; /* increase padding for better visibility */
 }
