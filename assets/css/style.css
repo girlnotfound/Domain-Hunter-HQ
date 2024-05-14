@@ -16,6 +16,8 @@ body {
   flex-direction: column; 
   background: var(--jet-black);
   cursor: pointer;
+  min-height: 100vh;  /* ensures footer can stick to bottom if content is not enough */
+  font-family: 'Courier New', Courier, monospace;
 }
 
 header {
@@ -23,19 +25,18 @@ header {
   background-color: var(--charcoal);
   color: var(--pale-blue);
   font-size: 40px;
-  padding: 1rem 0;
   position: fixed; 
+  top: 0;
 }
 
 header h1 {
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 main {
   flex: 1;
-  padding-top: 20px;
-  padding-bottom: 0;
+  overflow: auto;
+  padding-top: 60px;
 }
 
 h2 {
@@ -47,11 +48,10 @@ h2 {
 footer {
   background-color: var(--jet-black);
   color: var(--pale-blue);
-  padding: 1rem 0;
+  padding: 20px;
   width: 100%;
   text-align: center;
   margin-top: 0;
-  border-top: none;
 }
 
 /* defines layout for search container */
@@ -192,15 +192,11 @@ footer {
   transform: translateY(1px);
 }
 
+/* this specifically targets the animated search bar */
 @media screen {
-
   body,
   input {
     color: var(--jet-black);
-  }
-
-  body {
-    background: var(--jet-black);
   }
 
   .search-bar input {
@@ -216,4 +212,19 @@ footer {
   .search-btn {
     background: var(--pale-blue);
   }
+}
+
+/* added media queries to make the site responsive */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 24px; /* smaller title font size for smaller screen */
+  }
+
+  .search-container h2 {
+    font-size: 20px; /* smaller section font size for smaller screen */
+  }
+}
+
+footer {
+  padding: 20px; /* increase padding for better visibility */
 }
