@@ -8,50 +8,47 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* account for padding and border in the elements total width and height */
+}
+
+html, body {
+  height: 100%; /* to make the body fill the entire viewport */
+  overflow: hidden; /* hide overflow to remove the scroll bar */
 }
 
 body {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  height: 100vh; /* to make the body fill the entire viewport height */
   background: var(--jet-black);
   cursor: pointer;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-header {
-  width: 100%;
-  background-color: var(--charcoal);
+main {
+  flex-grow: 1; /* to allow the main content to expand and fill the space available */
+  overflow: auto; /* to add a scroll bar if content overflows */
+}
+
+header, main, footer {
   color: var(--pale-blue);
-  font-size: 40px;
-  padding: 1rem 0;
-  position: fixed; 
 }
 
 header h1 {
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-main {
-  flex: 1;
-  padding-top: 20px;
-  padding-bottom: 0;
+  font-size: 45px;
+  background-color: var(--charcoal);
+  border: 1px solid var(--dusty-blue);
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 30px;
   padding-bottom: 20px;
-  color: var(--pale-blue);
 }
 
 footer {
-  background-color: var(--jet-black);
-  color: var(--pale-blue);
-  padding: 1rem 0;
-  width: 100%;
+  font-size: 15px;
   text-align: center;
-  margin-top: 0;
-  border-top: none;
 }
 
 /* defines layout for search container */
@@ -60,7 +57,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 /* styling for the searchbar */
@@ -192,15 +189,11 @@ footer {
   transform: translateY(1px);
 }
 
+/* targets the animated search bar */
 @media screen {
-
   body,
   input {
     color: var(--jet-black);
-  }
-
-  body {
-    background: var(--jet-black);
   }
 
   .search-bar input {
@@ -216,4 +209,19 @@ footer {
   .search-btn {
     background: var(--pale-blue);
   }
+}
+
+  /* added media queries to make the site responsive */
+  @media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 24px; /* smaller title font size for smaller screen */
+ }
+
+  .search-container h2 {
+    font-size: 20px; /* smaller section font size for smaller screen */
+  }
+}
+
+  footer {
+  padding: 20px; /* increase padding for better visibility */
 }
