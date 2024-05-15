@@ -17,46 +17,57 @@
             <h1>Domain Hunter HQ</h1>
         </header>
         <main>
-            <div>
-                <section>
-                    <div class="search-container">
-                        <h2>Search For A Domain Name</h2>
-                        <div>
-                            <div class="box">
-                                <form action="click" class="search-bar">
-	                                <input type="search" name="search" pattern=".*\S.*" required>
-	                                <button class="search-btn" type="submit">
-		                            <span>Search</span>
-	                                </button>
-                                </form>
-                            </div>
-                        </div>
+            <section class="search-container">
+                <h2>Search For A Domain Name</h2>
+                <div class="box">
+                    <div class="search-bar">
+                        <input
+                            type="search"
+                            name="search"
+                            placeholder="Enter domain name"
+                            pattern=".*\S.*"
+                            required
+                            id="domainInput"
+                        />
+                        <button
+                            class="search-btn"
+                            onclick="checkDomain()"
+                        ></button>
                     </div>
-                        <!-- added bulma launch card modal -->
-                        <div class="modal">
-                            <div class="modal-background"></div>
-                            <div class="modal-card">
-                                <header class="modal-card-head">
-                                    <p class="modal-card-title">Results:</p>
-                                    <button class="delete" aria-label="close"></button>
-                                </header>
-                                <section class="modal-card-body">
-                                    <!-- content ... -->
-                                </section>
-                                <footer class="modal-card-foot">
-                                    <div class="buttons">
-                                        <button class="button is-success">Save changes</button>
-                                        <button class="button">Cancel</button>
-                                    </div>
-                                </footer>
-                            </div>
-                        </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </main>
         <footer>&copy; 2024 Domain Hunter HQ</footer>
 
-        <script src="./assets/js/script.js"></script>
+        <!-- added bulma launch card modal -->
+        <div id="domainInfoModal" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <h1 class="modal-card-title">Domain Checker</h1>
+                    <button
+                        class="delete is-large button is-black"
+                        aria-label="close"
+                        onclick="closeModal()"
+                    ></button>
+                </header>
+                <section class="modal-card-body">
+                    <div class="modal-content">
+                        <div class="box">
+                            <p id="domainInfo"></p>
+                        </div>
+                    </div>
+                </section>
+                <footer class="modal-card-foot">
+                    <div class="buttons">
+                        <button class="button is-black" onclick="closeModal()">
+                            Close
+                        </button>
+                    </div>
+                </footer>
+            </div>
+        </div>
 
+        <script src="./assets/js/script.js"></script>
     </body>
 </html>
