@@ -24,7 +24,7 @@ THEN I am presented with how old the domain is and its registered owner's contac
 
 ## Wireframe Design
 
-![domain-hunter-hq](https://github.com/girlnotfound/Domain-Hunter-HQ/assets/30459021/e73c0d67-ab9f-4970-a9d3-230d094c6432)
+![domain-hunter-hq](./assets/images/Domain-Hunter-Screenshot.png)
 
 ## Technologies Used
 
@@ -42,13 +42,13 @@ THEN I am presented with how old the domain is and its registered owner's contac
 
 This project was made possible with the help of:
 
-[Kaila Ronquillo](https://github.com/girlnotfound)
+[Kaila R.](https://github.com/girlnotfound)
 
-[Robert Saavedra](https://github.com/robscafe433)
+[Robert S.](https://github.com/robscafe433)
 
-[Ryan Petersen](https://github.com/RyanPetersen-89)
+[Ryan P.](https://github.com/RyanPetersen-89)
 
-[Truong Ngo](https://github.com/ngojohn2002)
+[Truong N.](https://github.com/ngojohn2002)
 
 ## Project Roadmap
 
