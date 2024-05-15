@@ -3,8 +3,9 @@ const apiKey = `at_9KS02gBH2SXFd3z6A3DAisbYXKSBC`;
 function checkDomain() {
     const domain = document.getElementById(`domainInput`).value.trim();
     console.log('domain: ' + domain);
-    if (!domain) {
-        showModal(`<strong>Please enter a domain name.</strong>`);
+
+    if (!domain.includes('.com')) {
+        showModal(`<strong>Please enter a .com domain name.</strong>`);
         return;
     }
 
