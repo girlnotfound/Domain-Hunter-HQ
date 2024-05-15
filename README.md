@@ -32,7 +32,7 @@ THEN I am presented with how old the domain is and its registered owner's contac
 2. [Registration Checker API](https://whois.whoisxmlapi.com/)
 3. HTML/CSS for structure and styling.
 4. JavaScript for interactive elements.
-5. Bulma: open-source CSS framework for modal card display of domain info.
+5. Bulma: open-source CSS framework for modal card display of domain information.
 
 ## Link to the Deployed Web App
 
@@ -49,5 +49,44 @@ This project was made possible with the help of:
 [Ryan Petersen](https://github.com/RyanPetersen-89)
 
 [Truong Ngo](https://github.com/ngojohn2002)
+
+## Project Roadmap
+
+**Research and Planning:**
+
+1. Research at least two server-side APIs.
+2. Research CSS frameworks
+
+**Repository Setup:**
+
+1. Create and name GitHub repository.
+2. Create repository file structure: add style.css and script.js files.
+3. Add README file (complete with unique name, description, technologies used, screenshot, and link to deployed application).
+
+**Frontend Development:**
+
+1. Design responsive polished UI (i.e., accept and respond to user input).
+2. Add modal so users can interact with application.
+
+**Backend Development:**
+
+1. Create feature to search for domain name availability.
+2. Create feature to present domain's registrant info if domain name is taken.
+3. Store persistent data in client-side storage.
+
+**Testing and Deployment:**
+
+1. Test and approve application.
+2. Deploy application.
+
+**Project Presentation Preparation:**
+
+1. Prepare for app presentation using the project presentation template to address the following:
+
+- Elevator pitch: A one-minute description of your application.
+- Concept: User story and motivation for development.
+- Process: Technologies used, task allocation, challenges, successes.
+- Demo: Showcase your application.
+- Directions for Future Development: Suggest other potential domain names and provide domain name hosting services.
 
 &copy; 2024 - Domain Hunter HQ.
