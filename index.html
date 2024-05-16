@@ -19,23 +19,29 @@
         <main>
             <section class="search-container">
                 <h2>Search For A Domain Name</h2>
-                <div class="box">
-                    <div class="search-bar">
-                        <input
-                            type="search"
-                            name="search"
-                            placeholder="Enter domain name"
-                            pattern=".*\S.*"
-                            required
-                            id="domainInput"
-                        />
-                        <button
-                            class="search-btn"
-                            onclick="checkDomain()"
-                        ></button>
+                <form class="form">
+                    <div class="box">
+                        <div class="search-bar">
+                            <input
+                                type="search"
+                                name="domainName"
+                                placeholder="Enter domain name"
+                                pattern=".*\S.*"
+                                required
+                                id="domainInput"
+                            />
+                            <button class="search-btn" type="submit"></button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </section>
+            <!-- <button
+                class="button is-link"
+                id="searchHistoryButton"
+                onclick="displaySearchHistoryModal()"
+            >
+                Search History
+            </button> -->
         </main>
         <footer>&copy; 2024 Domain Hunter HQ</footer>
 
@@ -60,6 +66,13 @@
                 </section>
                 <footer class="modal-card-foot">
                     <div class="buttons">
+                        <button
+                            class="button is-link"
+                            id="searchHistoryButton"
+                            onclick="displaySearchHistoryModal()"
+                        >
+                            Search History
+                        </button>
                         <button class="button is-black" onclick="closeModal()">
                             Close
                         </button>
