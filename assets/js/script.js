@@ -120,8 +120,9 @@ function getRegistrantInfo(domainInputEl) {
                         .replace(/:/g, ':</strong>');
 
                 const info = `
-          <strong>Domain name:</strong> ${data.WhoisRecord.domainName}<br>
-          <strong>Domain availability:</strong> ${data.WhoisRecord.domainAvailability}<br>
+          <h2>Registration Availability:</h2>
+          <strong>Domain Name:</strong> ${data.WhoisRecord.domainName}<br>
+          <strong>Domain Availability:</strong> ${data.WhoisRecord.domainAvailability}<br>
           <br>
          <h2>Registrant info:</h2><br>
          ${registrantInfo}<br>

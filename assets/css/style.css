@@ -51,6 +51,26 @@ footer {
   text-align: center;
 }
 
+.modal-card-body{
+  overflow-x: hidden;
+  padding: 10px
+}
+
+.modal-card-body h2{
+  color: rgb(200, 170, 224)
+}
+
+.modal-card-title{
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+    padding: none;
+}
+
+.modal-card-head, .modal-card-foot{
+  background-color: #25242c;
+}
+
 /* defines layout for search container */
 .search-container {
   display: flex;
