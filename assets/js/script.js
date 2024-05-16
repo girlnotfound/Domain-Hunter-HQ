@@ -1,41 +1,64 @@
 const apiKey = `at_9KS02gBH2SXFd3z6A3DAisbYXKSBC`;
 
+const formEl = document.querySelector('.form');
+
+const searchHistoryArray = [];
+let domainData = {};
+let domainInputEl = '';
+
+formEl.addEventListener('submit', function (event) {
+    event.preventDefault();
+    // domainInputEl = document.getElementById('domainInput').value; // Also works
+    domainInputEl = event.target.elements['domainName'].value;
+    console.log('INput name', domainInputEl);
+    console.log(typeof domainInputEl);
+    checkDomain();
+});
+
 function checkDomain() {
-    const domain = document.getElementById(`domainInput`).value.trim();
-    console.log('domain: ' + domain);
-    if (!domain) {
-        showModal(`<strong>Please enter a domain name.</strong>`);
+    // not using button with id. *Using botton with type="submit"
+    // const domain = document.getElementById(`domainInput`).value.trim();
+
+    if (!domainInputEl.includes('.com')) {
+        showModal(`<strong>Please enter a .com domain name.</strong>`);
         return;
     }
 
     fetch(
-        `https://domain-availability.whoisxmlapi.com/api/v1?apiKey=${apiKey}&domainName=${domain}&outputFormat=JSON`
+        `https://domain-availability.whoisxmlapi.com/api/v1?apiKey=${apiKey}&domainName=${domainInputEl}&outputFormat=JSON`
     )
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
             console.log(
-                `data.DomainInfo.domainAvailability: ` +
-                    data.DomainInfo.domainAvailability
+                'Is sight available? : ',
+                data.DomainInfo.domainAvailability
             );
+
             if (data.DomainInfo.domainAvailability === `UNAVAILABLE`) {
-                getRegistrantInfo(domain);
+                getRegistrantInfo(domainInputEl);
             } else {
                 showModal(
-                    `<strong>Domain <h2>"${domain}"</h2> is available.</strong>`
+                    `<strong>Domain <h2>"${domainInputEl}"</h2> is available.</strong>`
                 );
+                let availability = data.DomainInfo.domainAvailability;
+                let name = domainInputEl;
+                const newSearch = {
+                    entity: name,
+                    availability: availability,
+                };
+                saveToLocalStorage(newSearch);
             }
         })
         .catch((error) => console.error(`Error:`, error));
 }
 
-function getRegistrantInfo(domain) {
+function getRegistrantInfo(domainInputEl) {
     fetch(
-        `https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=${apiKey}&domainName=${domain}&da=2&outputFormat=JSON`
+        `https://www.whoisxmlapi.com/whoisserver/WhoisService?apiKey=${apiKey}&domainName=${domainInputEl}&da=2&outputFormat=JSON`
     )
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            console.log('******************This is the 2nd API data : ', data);
             console.log(`
         Domain name: ${data.WhoisRecord.domainName}
         Domain availability: ${data.WhoisRecord.domainAvailability}
@@ -43,10 +66,10 @@ function getRegistrantInfo(domain) {
         Created date: ${data.WhoisRecord.createdDateNormalized}
         Expires date: ${data.WhoisRecord.expiresDateNormalized}
 
-        ====================
+        ====================    
         WhoisRecord.rawText: 
         ${data.WhoisRecord.rawText}
-        
+            
         ====================
         WhoisRecord.registryData.createdDateNormalized: ${data.WhoisRecord.registryData.createdDateNormalized}
         WhoisRecord.registryData.expiresDateNormalized: ${data.WhoisRecord.registryData.expiresDateNormalized}
@@ -75,12 +98,12 @@ function getRegistrantInfo(domain) {
                 // Replace \n with <br><h3> and colon with </h3> in raw text data
                 // let registrantInfo = data.WhoisRecord.registrant.rawText;
                 // registrantInfo =
-                //   "<h3>" +
-                //   registrantInfo.replace(/\n/g, "<br><h3>").replace(/:/g, "</h3>");
+                //   "<h3>" +
+                //   registrantInfo.replace(/\n/g, "<br><h3>").replace(/:/g, "</h3>");
                 // let registryData = data.WhoisRecord.registryData.rawText;
                 // registryData =
-                //   "<h3>" +
-                //   registryData.replace(/\n/g, "<br><h3>").replace(/:/g, "</h3>");
+                //   "<h3>" +
+                //   registryData.replace(/\n/g, "<br><h3>").replace(/:/g, "</h3>");
 
                 // Replace \n with <br><strong> and colon with :</strong> in raw text data
                 let registrantInfo = data.WhoisRecord.registrant.rawText;
@@ -101,15 +124,23 @@ function getRegistrantInfo(domain) {
           <strong>Domain Name:</strong> ${data.WhoisRecord.domainName}<br>
           <strong>Domain Availability:</strong> ${data.WhoisRecord.domainAvailability}<br>
           <br>
-          <h2>Registrant info:</h2>
-          ${registrantInfo}<br>
-          <br>
-          <h2>Registry data:</h2>
-          ${registryData}<br>
-          <br>
-        `;
+         <h2>Registrant info:</h2><br>
+         ${registrantInfo}<br>
+         <br>
+         <h2>Registry data:</h2><br>
+         ${registryData}<br>
+         <br>
+         `;
+
                 showModal(info);
-                saveToLocalStorage(domain, registrantInfo);
+
+                let name = data.WhoisRecord.domainName;
+                let availability = data.WhoisRecord.domainAvailability;
+                const newSearch = {
+                    entity: name,
+                    availability: availability,
+                };
+                saveToLocalStorage(newSearch);
             } else {
                 showModal(
                     `<strong>Registrant information not available.</strong>`
@@ -133,11 +164,34 @@ function closeModal() {
 }
 
 // Need more details
-function saveToLocalStorage(domain, registrantInfo) {
-    const domainData = {
-        name: registrantInfo.name,
-        email: registrantInfo.email,
-        phone: registrantInfo.telephone,
-    };
-    localStorage.setItem(domain, JSON.stringify(domainData));
+function saveToLocalStorage(newSearch) {
+    searchHistoryArray.push(newSearch);
+    console.log('*******************', newSearch);
+
+    localStorage.setItem('searchHistory', JSON.stringify(searchHistoryArray));
+}
+
+function readProjectsFromStorage() {
+    let searchHistory = JSON.parse(localStorage.getItem('searchHistory'));
+
+    return searchHistory;
+}
+
+function displaySearchHistoryModal() {
+    let searchHistoryArrayLS = readProjectsFromStorage();
+
+    const modal = document.getElementById(`domainInfoModal`);
+    const domainInfo = document.getElementById(`domainInfo`);
+
+    const searchHistoryButtonEl = document.getElementById(
+        'searchHistoryButton'
+    );
+    console.log('HHHHHHHHHHHHHHHHHHHHHHHHHHHH', searchHistoryArrayLS);
+    let searchInfo = '';
+    for (let searchObjects of searchHistoryArrayLS) {
+        let availabilityLowerCase = searchObjects.availability.toLowerCase();
+        searchInfo += `Domain name: <strong>${searchObjects.entity}</strong> is <strong>${availabilityLowerCase}</strong><br><br>`;
+    }
+    domainInfo.innerHTML = searchInfo;
+    modal.classList.add(`is-active`);
 }
