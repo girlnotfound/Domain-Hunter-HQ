@@ -4,7 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- added bulma stylesheet link-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+        />
         <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
         <title>Domain Hunter HQ</title>
     </head>
@@ -18,22 +21,35 @@
                 <h2>Search For A Domain Name</h2>
                 <div class="box">
                     <div class="search-bar">
-                        <input type="search" name="search" placeholder="Enter domain name" pattern=".*\S.*" required id="domainInput" />
-                        <button class="search-btn" onclick="checkDomain()"></button>
+                        <input
+                            type="search"
+                            name="search"
+                            placeholder="Enter domain name"
+                            pattern=".*\S.*"
+                            required
+                            id="domainInput"
+                        />
+                        <button
+                            class="search-btn"
+                            onclick="checkDomain()"
+                        ></button>
                     </div>
                 </div>
             </section>
         </main>
-
         <footer>&copy; 2024 Domain Hunter HQ</footer>
-        
+
         <!-- added bulma launch card modal -->
         <div id="domainInfoModal" class="modal">
             <div class="modal-background"></div>
             <div class="modal-card">
                 <header class="modal-card-head">
                     <h1 class="modal-card-title">Domain Checker</h1>
-                    <button class="delete is-large button is-black" aria-label="close" onclick="closeModal()"></button>
+                    <button
+                        class="delete is-large button is-black"
+                        aria-label="close"
+                        onclick="closeModal()"
+                    ></button>
                 </header>
                 <section class="modal-card-body">
                     <div class="modal-content">
@@ -44,12 +60,14 @@
                 </section>
                 <footer class="modal-card-foot">
                     <div class="buttons">
-                        <button class="button is-black" onclick="closeModal()">Close</button>
+                        <button class="button is-black" onclick="closeModal()">
+                            Close
+                        </button>
                     </div>
                 </footer>
             </div>
         </div>
-        <script src="./assets/js/script.js"></script>
 
+        <script src="./assets/js/script.js"></script>
     </body>
 </html>
