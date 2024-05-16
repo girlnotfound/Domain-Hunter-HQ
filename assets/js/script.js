@@ -19,8 +19,8 @@ function checkDomain() {
     // not using button with id. *Using botton with type="submit"
     // const domain = document.getElementById(`domainInput`).value.trim();
 
-    if (!domainInputEl.includes('.com')) {
-        showModal(`<strong>Please enter a .com domain name.</strong>`);
+    if (domainInputEl === ('')) {
+        showModal(`<strong>Input is empty. Please add a domain name.</strong>`);
         return;
     }
 
