@@ -24,7 +24,7 @@ THEN I am presented with how old the domain is and its registered owner's contac
 
 ## Wireframe Design
 
-![domain-hunter-hq](./assets/images/Domain-Hunter-Screenshot.png)
+![domain-hunter-hq](./assets/images/proj7-gif.gif)
 
 ## Technologies Used
 
