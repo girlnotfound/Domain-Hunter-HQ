@@ -22,9 +22,13 @@ THEN I am presented whether the domain name is available or taken.
 THEN I am presented with how old the domain is and its registered owner's contact info.
 ```
 
-## Wireframe Design
+## Demonstration
 
 ![domain-hunter-hq](./assets/images/proj7-gif.gif)
+
+## Presentation
+
+![domain-hunter-hq](./assets/images/proj7-slideshow-gif.gif)
 
 ## Technologies Used
 
