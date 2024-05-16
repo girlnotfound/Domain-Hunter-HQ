@@ -57,7 +57,7 @@ footer {
 }
 
 .modal-card-body h2{
-  color: rgb(200, 170, 224)
+  color: #c8aae0
 }
 
 .modal-card-title{
@@ -69,6 +69,17 @@ footer {
 
 .modal-card-head, .modal-card-foot{
   background-color: #25242c;
+}
+
+#searchHistoryButton{
+  background-color: #c8aae0;
+  color: black;
+  font-size: 1.25rem;
+}
+
+.is-black{
+  background-color: rgb(61, 61, 61);
+  font-size: 1.25rem;
 }
 
 /* defines layout for search container */
